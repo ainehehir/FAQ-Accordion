@@ -1,0 +1,128 @@
+:root{
+
+    --clr-white:hsl(0, 0%, 100%);
+    --clr-light-pink: hsl(275, 100%, 97%);
+    --clr-grayish-purple:hsl(292, 16%, 49%);
+    --clr-dark-purple:hsl(282, 47%, 51%);
+    --clr-light-text:rgb(173, 166, 174);
+
+
+
+    --ff-sans:'Work Sans', sans-serif;
+
+    --fs-400:1rem;
+
+    --fw-normal:400;
+    --fw-semi-bold:600;
+    --fw-bold:700;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+
+html{
+    padding: 0;
+    margin:0px;
+    border: 0;
+    font-family: var(--ff-sans);
+    font-size:var(--fs-400);
+    line-height: 1.1;
+    background-color: var(--clr-light-pink);
+    
+}
+
+
+
+header{
+    background-image: url(./assets/images/background-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    height: 320px;
+}
+
+ @media screen and (min-width:375px){
+    header{
+      
+        background-image: url(./assets/images/background-pattern-desktop.svg);
+        background-size: cover;  
+    }
+
+} 
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+
+#accordion{
+    position:absolute;
+    left: 50%;
+    transform: translate3d(-50%,-50%, 0);
+    background-color: var(--clr-white);
+    padding:1rem;
+    border-radius: .5rem;
+    margin-inline: 1.5rem;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);  
+    width:50%;
+}
+
+.heading{
+    display: flex;
+    align-items: center;
+    gap:1.5rem;
+}
+
+#accordion button{
+    font-weight: var(--fw-semi-bold);
+    background-color: var(--clr-white);
+    padding-inline: 1rem;
+    border:none;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    margin-block: .75rem;
+    overflow: hidden;
+    
+}
+
+#accordion button:after{
+    content: url(./assets/images/icon-plus.svg);
+    float: right;
+}
+
+
+.acc-item-content {
+    color:var(--clr-light-text);
+    display: none;
+    overflow: hidden;
+    padding-inline: 1rem;
+    padding-bottom: 1rem;
+   
+}
+
+
+#accordion button:hover{
+    color:var(--clr-dark-purple);
+}
+
+
+
+#accordion button.active:after{
+    content: url(./assets/images/icon-minus.svg);
+    float: right;
+}
+
+
+
+
+
+
